@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Data Visualization: A Practical Overview Into The Art of the Possible</title>
+    <!-- Include  Reveal dependencies-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/css/reveal.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/css/theme/simple.min.css" />
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vega/3.0.8/vega.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vega-lite/2.0.4/vega-lite.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vega-embed/3.0.0-rc7/vega-embed.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/js/reveal.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/plugin/zoom-js/zoom.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/plugin/notes/notes.min.js"></script>
+    <style media="screen">
+      /* Add space between Vega-Embed links  */
+      .vega-actions a {
+        margin-right: 5px;
+      }
+    </style>
+  </head>
+  <body>    
+    <!-- Include reveal slide-->
+    <div class="reveal">
+      <div class="slides">
+        <!-- <section>
+          <h1>Data Visualization: An Overview Into The Art Of The Possible</h1>
+
+        </section>
+        <section>
+          <section>
+            <h1>Why Visualize Data?</h1>
+          </section>
+          <section>
+            <aside class='notes'>Stuff</aside>
+            <p class='fragment fade-in'>
+              <li>Pattern Recognition</li>
+              <li>Simplify Complexity</li>
+              <li>Storytelling</li>
+            </p>
+            <img class='fragment fade-in' class='responsive' src="img/Minard.png" alt="Image description" />
+          </section>
+
+        </section> -->
+
+        <section>  <!--Theory-->
+          <section>
+            <h1>How Best Should We Visualize Data?</h1>
+          </section>
+          <section>
+            <h4>Tufte Principals</h4>
+
+            <div class='row'>
+              <div class='col s4'>
+                <div class='row'>
+                  <div class='col fragment fade-in'>
+                    <span class='blue-text text-darken-4'>Graphical Integrity</span>
+                    <p>
+                      Lie Factor = Size of effectshown in graph / Size of effect in data
+                    </p>
+                  </div>
+                  <div class='col fragment fade-in'>
+                    <span class='blue-text text-darken-4'>Show the Data</span>
+                    <p>
+                      Data-ink ratio = Data-ink / Total ink used in graphic
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class='col s8 fragment fade-in'>
+                <span class='blue-text text-darken-4'>Remove 'Chartjunk'</span>
+                <br>
+                <iframe width=750 height=500 src="http://static1.squarespace.com/static/56713bf4dc5cb41142f28d1f/5671e8bf816924fc22651410/5671eae2816924fc2265189a/1450306274301/data-ink.gif?format=original"></iframe>
+              </div>
+            </div>
+            <aside class='notes'>Maximize data-ink</aside>
+          </section>
+          <section>
+            <h4></h4>
+            <p>
+              <span class='blue-text text-darken-4'>Grammar of Graphics</span>
+              <li>Concept by Leeland Wilkinson from 'The Grammar of Graphics' (2010) </li>
+              <li>Attempts standard syntax for defining graphics</li>
+              <li>Syntax varies based on language (e.g. R, Python, Javascript)</li>
+              <li>Breaks graph down into reusable components</li>
+            </p>
+            <p>
+              <span class='blue-text text-darken-4'>Example:</span> 
+              <li>Scatterplot => Axis, Scale, Point, Data</li>
+              <li>Point => Size, Shape, Opacity</li>
+            </p>
+          </section>
+        </section>
+
+        <!--Commercial Products-->
+        <!-- <section>  
+          <section>
+            <h1>Commercial Products</h1>
+          </section>
+          <section>
+            <h4>Tableau</h4>
+            <iframe width="100%" height="750" src='https://public.tableau.com/views/MarylandPayments08_16/Dashboard1?:embed=y&:display_count=yes'></iframe>
+            <aside class='notes'>
+              <ul>
+                <li>Point out amount of expense in healthcare compared to everything else</li>
+                <li>Look at ST MARYS Spending</li>
+                <li>Point out amount of money given to COMMISSIONERS</li>
+                <li>Point out amount of money given to ST MARYS COUNTY COMMISSIONERS</li>
+
+              </ul>
+            </aside>
+          </section>
+        </section> -->
+
+        <!--OSProducts-->
+        <!-- <section>  
+          <section>
+            <h1>Open Source Products</h1>
+          </section>
+          <section>
+            <img height='30%' width='50%' src="img/vegalite.png" alt="Image description" />
+            <img height='30%' width='50%' src="img/vega.png" alt="Image description" />
+            <img height='30%' width='50%' src="img/d3.png" alt="Image description" />
+          </section>
+        </section> -->
+
+        <!--VIz Types-->
+        <section>  
+          <section>
+            <h1>Visualization Types</h1>
+          </section>
+          <section>
+            <h4>Cholorpleth Map</h4>
+            <!-- Shows unemployment data by county -->
+            <iframe src="https://vida.io/embed/qyRt8bFozMqfaw6Av" width="900" height="525" seamless frameBorder="0" scrolling="no"></iframe>
+            <!--            <img src='https://datavizcatalogue.com/methods/images/top_images/choropleth.png'>-->
+          </section>
+          <!--
+<section>
+<h4>Arc Diagrams</h4>
+<img src='https://datavizcatalogue.com/methods/images/top_images/arc_diagram.png'>
+</section>
+-->
+          <section>
+            <h4>Radial Tree</h4>
+            <img height='1000' src='https://i.stack.imgur.com/dXQBf.jpg'>
+          </section>
+          <section>
+            <h4>Chord Diagram</h4>
+            <iframe src="https://vida.io/embed/F7g8Lv4wkSvJZ49sf" width="960" height="525" seamless frameBorder="0" scrolling="no"></iframe>
+            <!--            <img src='https://datavizcatalogue.com/methods/images/anatomy/SVG/chord_diagram.svg'>-->
+          </section>
+          <!--
+<section>
+<h4>Heatmap</h4>
+</section>
+-->
+          <section>
+            <h4>Sankey</h4>
+            <iframe src="https://vida.io/embed/yB7uTByGsAwiZQFDZ" width="960" height="525" seamless frameBorder="0" scrolling="no"></iframe>
+          </section>
+          <section>
+            <h4>Treemap</h4>
+            <!-- Shows topic analysis with LDA on algorithmia.com -->
+            <iframe src="https://vida.io/embed/chgwCKJJnKh7soEcQ" width="800" height="475" seamless frameBorder="0" scrolling="no"></iframe>
+          </section>
+          <!-- <section>
+            <h4>Network</h4>
+            <iframe src="https://vida.io/embed/qZ5SJdRJfj3XmSXYJ" width="900" height="625" seamless frameBorder="0" scrolling="no"></iframe>
+          </section> -->
+        </section>
+        <section>
+          <section>
+            <h1>
+              Examples
+            </h1>
+          </section>
+          <section>
+            <div id="vis"></div>
+          </section>
+
+        </section>
+
+      </div>
+    </div>
+    
+
+    <script src='vl.js'></script>
+    <script>
+      // Reveal Init
+      Reveal.initialize({
+
+        width: "100%",
+        height: "100%",
+        margin: 0,
+        minScale: 1,
+        maxScale: 1,
+      });
+      Reveal.configure({
+        slideNumber: true
+      });
+    </script>
+    
+  </body>
+</html>
