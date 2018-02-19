@@ -59,7 +59,7 @@
           "x": {
             "aggregate": "count", "field": "PEO", "type": "quantitative",
             "axis": {
-              "title": "Average of b"
+              "title": "Number of Records"
             }
           },
           'color': {
